@@ -1,5 +1,47 @@
 function [W, H, objective, iter_times] = palm_nmf(V, params)
+% Algorithm for NMF with eucidian norm as objective function and 
+%L1 constraint on W for sparse paterns and Tikhonov regularization 
+%for smooth activation coefficients.
+%
+% [W, H, objective] = sparse_nmf(v, params)
+% 
+% Objective function: 
+% || W * H - V ||² + lambda * || W ||_1 + eta || H T ||² + betaW ||W||²
+%                                                        + betaH ||H||²
+%
+%
+% Inputs:
+% V:  matrix to be factorized
+% params: optional parameters
+%     sparsity: weight for the L1 sparsity penalty (default: 0)
+%
+%     smoothness: weight for the smoothness constraint.
+%
+%     max_iter: maximum number of iterations (default: 100)
+%
+%     conv_eps: threshold for early stopping (default: 0, 
+%                                             i.e., no early stopping)
+%     random_seed: set the random seed to the given value 
+%                   (default: 1; if equal to 0, seed is not set)
+%     init_W:   initial setting for W (default: random; 
+%                                      either init_w or r have to be set)
+%     r: (K)       # basis functions (default: based on init_w's size;
+%                                  either init_w or r have to be set)
+%     init_H:   initial setting for H (default: random)
+%     init_W:   initial setting for W (default: random)
+%
+%     gamma1:   constant > 1 for the gradient descend step of W.
+%
+%     gamma2:   constant > 1 for the gradient descend step of W.
+%
+%     betaH:   constant. L-2 constraint for H.
+%     betaW:   constant. L-2 constraint for W.
 
+% Outputs:
+% W: matrix of basis functions
+% H: matrix of activations
+% objective: objective function values throughout the iterations
+%iter_times: time passed until iteration ith
 m = size(V, 1);
 n = size(V, 2);
 
