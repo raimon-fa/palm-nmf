@@ -2,18 +2,14 @@
 
 Implementation of the NMF algorithm using the PALM framework with smoothness and sparsity constraints
 
-## Algorithm
-
-![equation](http://latex.codecogs.com/gif.latex?Concentration%3D%5Cfrac%7BTotalTemplate%7D%7BTotalVolume%7D)
-
-## Usage
-
-ldldllslldf
-
 ## Example
 
 ```
-a = [1,2,3]
-palm_nmf()
+V = rand(50,1000);
+params = struct;
+params.r = 5;
+params.max_iter = 200;
+
+[W,H,objective_function,iteration_times] = palm_nmf(V,params);
 ```
 
