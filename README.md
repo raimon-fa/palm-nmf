@@ -1,6 +1,6 @@
 # PALM-NMF
 
-Implementation of the NMF algorithm using the PALM framework with smoothness and sparsity constraints
+Matlab implementation of the NMF algorithm using the PALM framework with smoothness and sparsity constraints
 
 ## Example
 
