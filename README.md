@@ -4,7 +4,7 @@ Implementation of the NMF algorithm using the PALM framework with smoothness and
 
 ## Algorithm
 
-$f(x) = \lambda$
+![equation](http://latex.codecogs.com/gif.latex?Concentration%3D%5Cfrac%7BTotalTemplate%7D%7BTotalVolume%7D)
 
 ## Usage
 
