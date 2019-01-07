@@ -1,7 +1,7 @@
 %{
 The MIT License
 
-Copyright (c) 2011 Raimon Fabregat
+Copyright (c) 2017 Raimon Fabregat
 
 Permission is hereby granted, free of charge, 
 to any person obtaining a copy of this software and 
